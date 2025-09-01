@@ -21,9 +21,13 @@ class AutoHitApp:
         self.setup_ui()
 
     def setup_ui(self):
-        # Main container
-        main_frame = ctk.CTkFrame(self.root)
-        main_frame.pack(fill="both", expand=True, padx=20, pady=20)
+        # Create scrollable frame
+        self.scrollable_frame = ctk.CTkScrollableFrame(self.root)
+        self.scrollable_frame.pack(fill="both", expand=True, padx=20, pady=20)
+        
+        # Main container inside scrollable frame
+        main_frame = ctk.CTkFrame(self.scrollable_frame)
+        main_frame.pack(fill="both", expand=True, padx=0, pady=0)
 
         # Title
         title_label = ctk.CTkLabel(
